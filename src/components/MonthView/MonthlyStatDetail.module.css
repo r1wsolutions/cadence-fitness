@@ -1,0 +1,23 @@
+.stat {
+    text-align: center;
+}
+
+.count{
+    font-size: 2rem;
+}
+
+.title{
+    color: #6D717A;
+    font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+    .count{
+        font-size: 1.5rem;
+    }
+    
+    .title{
+        font-size: .5rem;
+    }
+    
+}

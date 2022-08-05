@@ -1,0 +1,78 @@
+.wrapper{
+    background: radial-gradient(
+        circle,
+        #222,
+        black 150%
+      ) no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.top{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: darkgray;
+    margin-top: 5rem;
+    width: 100%;
+    height: 35rem;
+    min-height: 100%;
+}
+.main-image{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url('../assets/splash_01-min.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+.background-apply{
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    margin-left: 2rem;
+    background-color: rgba(211, 211, 211, 0.5);
+    padding: .25rem;
+}
+.main-image__title{
+    margin:0;
+    padding: 0;
+    font-size: 2.5vw;
+    color: white;
+}
+.ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.li{
+    display: inline-block;
+}
+
+@media (max-width: 850px) {
+ 
+    .main-image{
+        background-size: 150%;
+    }
+    .main-image__title{
+        font-size: 5vw;
+    }
+}
+
+@media (max-width: 550px) {
+ 
+    .main-image{
+        background-size: 275%;
+    }
+}

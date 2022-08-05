@@ -1,0 +1,45 @@
+.wrapper {
+    position: relative;
+    margin: 8rem auto;
+    padding: 2rem 0;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+}
+
+.exercise-holder{
+    position: relative;
+    padding: 2.5rem 5rem;
+    width: 8    0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: gray 1px solid;
+    border-radius: 8px;
+}
+
+.divider{
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    border-width: .01rem;
+}
+
+@media (max-width: 900px) {
+    .wrapper{
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .wrapper{
+        width: 99%;
+    }
+    .exercise-holder{
+        padding: 2.5rem .5rem;
+    }
+
+}

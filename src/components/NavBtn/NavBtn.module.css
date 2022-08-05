@@ -1,0 +1,45 @@
+.btn{
+    color: black;
+    border: 1px solid black;
+    padding: 1rem;
+    margin: 1rem;
+    text-decoration: none;
+    width: 6rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn.active{
+    background-color:#ff8325;
+}
+
+.btn:visited { text-decoration: none; }
+.btn:hover {
+    color: black; 
+    background-color: rgb(235, 232, 232); ;
+    font-weight: lighter;
+    animation: fade-in .4s ease-in;
+} 
+
+@keyframes fade-in {
+    from {
+        opacity: 1;
+        background-color: #ff8325;
+    }
+    
+    to {
+        opacity: 1;
+        background-color: rgb(235, 232, 232); 
+    }
+}
+
+@media (max-width: 400px) {
+    .btn{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+        width: 6rem;
+        font-size: .75rem;
+    }
+}

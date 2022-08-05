@@ -1,0 +1,126 @@
+.wrapper, .auth-form {
+    width: 100%;
+    margin: 6rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.auth-form {
+    width: 30%;
+    border: lightgray solid .5px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+.input {
+    margin: 1rem 6rem;
+    padding: .25rem;
+    height: 2.5rem;
+    width: 15rem;
+    border: none;
+    text-align: center;
+    background-color: white;
+}
+
+
+.input:focus, .input:focus::placeholder{
+    background-color: rgb(255, 213, 136);
+    color: white;
+}
+
+.input:focus::placeholder{
+    font-weight: bolder;
+    font-size: large;
+}
+
+.login-btn{
+    border: none;
+    padding: .25rem;
+    height: 2.5rem;
+    width: 15rem;
+    border: .25rem solid white;
+    color: lightgray;
+    background-color: black;
+    font-weight: lighter;
+}
+
+.login-btn:hover{
+    border: .25rem solid black;
+    color: black;
+    background-color: white;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+
+.switch-btn{
+    border: none;
+    background-color: inherit;
+    border-bottom: solid lightgray .1rem;
+    color: lightgray;
+}
+.switch-btn.demo{
+    background-color: orange;
+    border-radius: 1rem;
+    padding: .5rem;
+    font-weight: bold;
+    color: rgb(240, 240, 240);
+}
+
+.switch-btn:hover{
+    cursor: pointer;
+    color: white;
+    border-bottom: solid white .1rem;
+}
+.sub-title{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(241, 240, 240);;
+    width: 100%;
+    bottom: 0;
+}
+.pop-message{
+    position: fixed;
+    top: 25%;
+    left: 62%;
+    padding: 1rem;
+    height: 5rem;
+    width: 5rem;
+    text-align: center;
+    background-color: rgb(4, 196, 4);
+    color: white;
+    border-radius: 100%;
+    animation: fade-out 1.75s ease-out forwards;
+}
+
+@keyframes fade-out {
+    0% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;        
+    }
+}
+
+
+@media (max-width:900px) {
+    .auth-form{
+        width: 75%;
+    }
+}

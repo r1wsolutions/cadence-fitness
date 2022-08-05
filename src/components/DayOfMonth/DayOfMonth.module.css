@@ -1,0 +1,26 @@
+.date,.skeleton{
+    display: inline-block;
+    position: relative;
+    border: .5px #ddd solid;
+    background-color: white;
+    width: 10rem;
+    height: 8rem;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.skeleton{
+    background-color: white;
+}
+
+.skeleton.empty{
+    background-color: #F4F4F4;
+}
+
+.date:hover{
+    background-color: rgb(255, 213, 134);
+    box-shadow: 1px 1px 4px 2px rgb(255, 213, 134);
+}
+
+.date:active {text-decoration: none;}

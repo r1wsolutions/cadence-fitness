@@ -1,0 +1,64 @@
+.form{
+    position: fixed;
+    top: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 50%;
+    min-width: 15rem;
+    height: 40%;
+    z-index: 2;
+}
+
+.inp{
+    width: 50%;
+    height: 2.5rem;
+    text-align: center;
+}
+
+.backdrop{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    min-height: 100%;
+    background-color: rgba(255, 255, 255, 0.25);
+    z-index: 0;
+}
+
+.btn{
+    background: none;
+    box-shadow: none;
+    border: none;
+    color: white;
+    border-bottom: white 1px solid;
+    cursor: pointer;
+}
+.btn:hover{
+    animation:btn-anim .75s ease-in forwards;
+    color: darkgray;
+}
+
+.close{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    border: white 1px solid;
+    padding: .5rem;
+    background-color: red;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+@keyframes btn-anim {
+    0% {
+        opacity: 0;
+        color: white;
+    }
+
+    90% {
+        opacity: 1;
+        color: darkgray;
+    }
+}
