@@ -13,7 +13,7 @@ const Graph = (props) =>{
   useEffect(()=>{
 
     let finalTempSet = []
-    
+     
     dataSet.forEach((r)=>{
 
       if(r.reps > highestRep.current)
@@ -33,7 +33,6 @@ const Graph = (props) =>{
         percentage: dataSet[i].percentage,
         total: r.reps > 0 ? r.reps : 0
       }) 
-
     })
 
     if(finalTempSet.length === dataSet.length)
@@ -49,6 +48,7 @@ const Graph = (props) =>{
     return (
         <div className={`${classes['wrapper']}  ${props.changeBackground &&  classes['change-background']}`}>
             <h2>{props.title}</h2>
+
             <div className={`${classes['graph-holder']} 
               ${props.customSet && classes['custom-set']}
               ${props.changeStart && classes['change-start']}`}  
@@ -65,6 +65,7 @@ const Graph = (props) =>{
                 }
             )}
             </div>
+            
         </div>
         )
 }

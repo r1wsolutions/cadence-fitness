@@ -1,5 +1,5 @@
 
-export const weeklyStats = async (e,months,token,uid) =>{
+export const weeklyStats = async (e,months,token,uid) =>{ 
 
     let monthSnapshot = {
         week1: []

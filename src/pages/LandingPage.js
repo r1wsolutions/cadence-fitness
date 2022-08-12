@@ -1,5 +1,7 @@
-import Graph from '../components/Chart/Graph/Graph'
+import Graph from '../components/Chart/Graphs/Graph'
 import classes from './LandingPage.module.css'
+
+//import ApexGraph from '../components/Chart/Graphs/ApexGraph'
 
 const LandingPage = () =>{
 
@@ -68,6 +70,7 @@ const LandingPage = () =>{
             rawCollection={weeklyDummyData}
             changeBackground={true}
         />
+        
         <Graph
             title='monthly'
             rawCollection={monthlyDummyData}

@@ -3,10 +3,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useState } from 'react'
 import { weeklyStats, monthlyStats, annualStats, customStats} from '../helpers/statsSorting'
 import { errorActions } from '../store/errorReducderSlice'
-import Graph from '../components/Chart/Graph/Graph'
+import Graph from '../components/Chart/Graphs/Graph'
+import ApexGraph from '../components/Chart/Graphs/ApexGraph'
 
 import classes from './Stats.module.css'
- 
+  
 
 const Stats =() =>{
 
@@ -242,6 +243,14 @@ const Stats =() =>{
             })
         })
 
+        
+        return <ApexGraph 
+                    key={exIndex}
+                    title={ex} 
+                    rawCollection={rawCollection}
+                />
+        
+        /*
             return <Graph
                         key={exIndex}
                         title={ex} 
@@ -250,6 +259,7 @@ const Stats =() =>{
                         changeBackground={parseInt(exIndex) % 2 !== 0}
                         changeStart={true}
                     />
+                */
         })
 
     return (
@@ -279,6 +289,7 @@ const Stats =() =>{
                 {optionSelected === 'custom' && customSelected}
                 {optionSelected.length > 0 && <button className={classes.btn}>GO</button>}
             </form>
+            
             <div className={classes['exercises-completed']}>
                 {optionSelected === 'weekly' && exercisesCompleted && weeklyResults}
                 
