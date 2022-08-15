@@ -1,11 +1,11 @@
+import {useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {authReducerActions} from '../../store/authReducerSlice'
 import {getProfileAction} from '../../store/authActions'
+import {dimensionsActoins} from '../../store/dimensionsReducer'
 import { useHistory } from 'react-router'
 import NavBtn from '../NavBtn/NavBtn'
 import classes from './NavBar.module.css'
-import { useEffect} from 'react'
-//import {useState} from 'react'
 
 let timeout = null
 
@@ -17,6 +17,7 @@ const NavBar =() =>{
     const profile = useSelector((state) => state.authReducer.profile)
     const token = useSelector((state) => state.authReducer.authToken)
     const autoSignOutTime = useSelector((state) => state.authReducer.autoSignOutTime)
+    
     const expireTime = new Date( parseInt(localStorage.getItem('authExpireTiime')) ).getTime()
     //const [isActive, setIsActive] = useState('/')
 
@@ -33,9 +34,12 @@ const NavBar =() =>{
         history.push('/')
     }
 
-    useEffect(()=>{
+    window.addEventListener('resize',()=>{
+        dispatch(dimensionsActoins.setInnerWidth({screenInnerWidth: window.innerWidth}))
+    })
 
-        
+    useEffect(()=>{
+        dispatch(dimensionsActoins.setInnerWidth({screenInnerWidth: window.innerWidth}))
         //setIsActive(history.location.pathname)
 
         dispatch(authReducerActions.checkAuthStatus())

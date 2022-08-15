@@ -14,6 +14,7 @@ const Stats =() =>{
     const dispatch = useDispatch()
     const token = useSelector((state) => state.authReducer.authToken)
     const uid = useSelector((state) => state.authReducer.uid)
+    const screenInnerWidth = useSelector((state)=>state.dimensionsReducer.screenInnerWidth)
     const [clickedSelector, setClickedSelector] = useState(false)
     const [optionSelected, setSetOptionSelected] = useState('')
     const [monthSnapshot, setMonthSnapshot] = useState([])
@@ -248,6 +249,7 @@ const Stats =() =>{
                     key={exIndex}
                     title={ex} 
                     rawCollection={rawCollection}
+                    windowWidth={screenInnerWidth}
                 />
         
         /*

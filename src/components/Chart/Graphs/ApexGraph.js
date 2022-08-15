@@ -13,9 +13,7 @@ const ApexGraph = (props) => {
   const [categoriesList, setCategoriesList] = useState([])
   const [repsList, setRepsList] = useState([])
 
-
     useEffect(()=>{
-
       const tempCatList = []
       const tempRepsList = []
 
@@ -89,7 +87,7 @@ const ApexGraph = (props) => {
                   type='line'
                   options={options}    
                   height={500}
-                  width={600}
+                  width={props.windowWidth * .9}
                   series={chartData}
               />
             </div>}
