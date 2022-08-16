@@ -1,7 +1,7 @@
-import Graph from '../components/Chart/Graphs/Graph'
+import { useSelector } from 'react-redux'
+import ApexGraph from '../components/Chart/Graphs/ApexGraph'
 import classes from './LandingPage.module.css'
 
-//import ApexGraph from '../components/Chart/Graphs/ApexGraph'
 
 const LandingPage = () =>{
 
@@ -47,6 +47,8 @@ const LandingPage = () =>{
     ]
 
 
+    const screenInnerWidth = useSelector((state) => state.dimensionsReducer.screenInnerWidth)
+
     return (<div className={classes.wrapper}>
         <div className={classes.top}>
             <div className={classes['main-image']}>
@@ -60,27 +62,25 @@ const LandingPage = () =>{
                 </div>
             </div>
         </div>
-        <Graph
+        <ApexGraph
             title='daily'
             rawCollection={dailyDummyData}
-            isLong={true}
+            windowWidth={screenInnerWidth}
         />
-        <Graph
-            title='weekly'
+        <ApexGraph 
+            title={'weekly'} 
             rawCollection={weeklyDummyData}
-            changeBackground={true}
+            windowWidth={screenInnerWidth}
         />
-        
-        <Graph
-            title='monthly'
+        <ApexGraph 
+            title={'monthly'} 
             rawCollection={monthlyDummyData}
-            isLong={true}
-            customSet={true}
+            windowWidth={screenInnerWidth}
         />
-        <Graph
-            title='annually'
+        <ApexGraph 
+            title={'annually'} 
             rawCollection={annualDummyData}
-            changeBackground={true}
+            windowWidth={screenInnerWidth}
         />
     </div>)
 }
