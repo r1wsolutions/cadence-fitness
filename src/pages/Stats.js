@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useState } from 'react'
 import { weeklyStats, monthlyStats, annualStats, customStats} from '../helpers/statsSorting'
 import { errorActions } from '../store/errorReducderSlice'
-import Graph from '../components/Chart/Graphs/Graph'
+//import Graph from '../components/Chart/Graphs/Graph'
 import ApexGraph from '../components/Chart/Graphs/ApexGraph'
 
 import classes from './Stats.module.css'
@@ -317,6 +317,13 @@ const Stats =() =>{
                             })
                         })
                         
+                        return <ApexGraph 
+                                    key={exCompI}
+                                    title={exCompleted} 
+                                    rawCollection={graphCollection}
+                                    windowWidth={screenInnerWidth}
+                                />
+                        /*
                         return <Graph 
                             key={exCompI}
                             rawCollection={graphCollection}
@@ -325,6 +332,7 @@ const Stats =() =>{
                             changeBackground={parseInt(exCompI) % 2 !== 0}
                             customSet={true}
                         />
+                        */
                     })
                 }
 
@@ -353,7 +361,13 @@ const Stats =() =>{
                             })
                         })
 
-                        
+                        return <ApexGraph 
+                                    key={exCompI}
+                                    title={exCompleted} 
+                                    rawCollection={graphCollection}
+                                    windowWidth={screenInnerWidth}
+                                />
+                        /*
                         return <Graph 
                             key={exCompI}
                             rawCollection={graphCollection}
@@ -361,6 +375,7 @@ const Stats =() =>{
                             isLong={optionSelected === 'monthly'}
                             changeBackground={parseInt(exCompI) % 2 !== 0}
                         />
+                        */
                     })
                 }
                 {
@@ -377,6 +392,14 @@ const Stats =() =>{
                                 }
                             })
 
+                            return <ApexGraph 
+                                    key={i}
+                                    title={n} 
+                                    rawCollection={graphCollection}
+                                    windowWidth={screenInnerWidth}
+                                />
+
+                            /*
                             return <Graph 
                                         key={i}
                                         rawCollection={graphCollection}
@@ -385,6 +408,7 @@ const Stats =() =>{
                                         changeBackground={parseInt(i) % 2 !== 0}
                                         customSet={graphCollection.length > 6}
                                     />
+                            */
                     })
                 }
             </div>
